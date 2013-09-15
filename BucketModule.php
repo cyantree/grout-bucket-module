@@ -28,7 +28,7 @@ class BucketModule extends Module
 
         if($config->type == self::TYPE_FILE){
             $this->bucket = new FileBucket();
-            $this->bucket->directory = $this->app->parseUri($config->config['directory']);
+            $this->bucket->directory = $this->app->dataStorage->createStorage($this->id);
         }elseif($config->type == self::TYPE_DOCTRINE){
             $connection = $config->config['connection'];
             $this->bucket = new DoctrineBucket($connection);

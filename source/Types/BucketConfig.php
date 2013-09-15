@@ -8,6 +8,5 @@ class BucketConfig
     public $type = BucketModule::TYPE_FILE;
 
     public $config = array(
-        'directory' => 'data://buckets/'
     );
 }
